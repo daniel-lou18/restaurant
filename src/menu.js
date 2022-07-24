@@ -1,10 +1,13 @@
 import logo from './serve-food.png';
-import {generateLogo, generateTitle, createPage, addToDescr} from './myModules';
+import {elements, addContent, createPage, addToDescr} from './myModules';
+
+const logoElem = addContent(elements().logoElem, elements().foodLogo, '', 'logo');
+const titleElem = addContent(elements().titleElem, elements().title, 'OUR MENU', 'title');
 
 const generateMenu = function() {
-  const descrElem = document.createElement('div');
-  const food = document.createElement('div');
-  const price = document.createElement('div');
+  const descrElem = elements().descrElem;
+  const food = elements().food;
+  const price = elements().price;
   descrElem.appendChild(food);
   descrElem.appendChild(price);
   descrElem.classList.add('menu-content', 'description');
@@ -17,6 +20,6 @@ const generateMenu = function() {
   return descrElem;
 };
 
-const menu = createPage(generateLogo(), generateTitle("OUR MENU"), generateMenu());
+const menu = createPage(logoElem, titleElem, generateMenu());
 
 export default menu;

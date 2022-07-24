@@ -1,9 +1,12 @@
 import logo from './serve-food.png';
-import {generateLogo, generateTitle, createPage, addToDescr} from './myModules';
+import {elements, addContent, createPage, addToDescr} from './myModules';
+
+const logoElem = addContent(elements().logoElem, elements().foodLogo, '', 'logo');
+const titleElem = addContent(elements().titleElem, elements().title, 'CONTACT US', 'title');
 
 const generateContact = function() {
-  const descrElem = document.createElement('div');
-  const contact = document.createElement('div');
+  const descrElem = elements().descrElem;
+  const contact = elements().contact;
   descrElem.appendChild(contact);
   descrElem.classList.add('contact-content', 'description');
   
@@ -13,6 +16,6 @@ const generateContact = function() {
   return descrElem;
 };
 
-const contact = createPage(generateLogo(), generateTitle("CONTACT US"), generateContact());
+const contact = createPage(logoElem, titleElem, generateContact());
 
 export default contact;
