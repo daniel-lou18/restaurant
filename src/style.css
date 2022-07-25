@@ -17,7 +17,7 @@ img {
 }
 
 #content {
-  max-width: 50vw;
+  width: min(700px, 50%);
   background-color: rgba(221, 155, 165, 0.7);
   padding-top: 20px;
 }
@@ -25,7 +25,7 @@ img {
 body {
   min-height: 100vh;
   background-image: url('bruna-branco-Uq5i5_cQdr8-unsplash.jpg');
-  background-size: 100%;
+  background-size: cover;
   display: flex;
   justify-content: center;
 }
@@ -48,10 +48,17 @@ p {
   font-weight: 550;
   letter-spacing: 0.15rem;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 div.menu-content {
   display: flex;
+  justify-content: space-evenly;
+}
+
+div.menu-content p {
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 p.food {
@@ -61,6 +68,11 @@ p.food {
 p.price::after {
   content: ' €';
   font-size: 1rem;
+}
+
+div.contact-content p {
+  margin-bottom: 0;
+  text-align: center;
 }
 
 div.tab-container {

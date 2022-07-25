@@ -23,7 +23,6 @@ const tabs = (function() {
 })()
 
 function showPage(e) {
-  console.log(e);
   const buttons = document.querySelectorAll('button');
   buttons.forEach(button => button.classList.remove('selected'));
   e.target.classList.add('selected');
